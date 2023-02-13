@@ -1,24 +1,43 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body,
 html {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100vh;
+  width: 100vw;
 }
 
-main {
-    padding: 5rem 0;
-    flex: 1 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
+main .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: -moz-fit-content;
+  width: fit-content;
+  align-content: center;
 }
+main .center p {
+  width: 100%;
+  text-align: center;
+  margin-top: 37px;
+}
+main .shortcuts {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(calc(-100% - 10px), -50%);
+}
+main .shortcuts .icon {
+  height: 55px;
+  width: 55px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: transform 0.15s;
+}
+main .shortcuts .icon:hover, main .shortcuts .icon:active {
+  transform: translate(-14px, 0);
+}/*# sourceMappingURL=style.css.map */
