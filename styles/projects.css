@@ -73,8 +73,11 @@ main .project .top {
   display: flex;
   justify-content: space-between;
 }
-main .project .top h4 {
+main .project .top a {
   margin: 15px 0 15px 15px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
 }
 main .project .top .side {
   display: flex;
