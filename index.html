@@ -4,32 +4,103 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
 
     <link rel="stylesheet" href="./styles/style.css">
 
-    <title>Giorgi Rakviashvili_</title>
+    <title>Giorgi Rakviashvili</title>
 </head>
 
 <body>
+    <top>
+        <h1 class="title">Giorgi Rakviashvili</h1>
+        <nav>
+            <ul>
+                <li>
+                    <img src="./assets/cabin_white_24dp.svg" title="home" alt="home">
+                    <a href="/" target="_blank" rel="noopener noreferrer">Home</a>
+                <li>
+                    <img src="./assets/description_white_24dp.svg" title="my resume" alt="resume">
+                    <a href="./rakviashvili_giorgi.pdf" target="_blank" rel="noopener noreferrer">Resume (me)</a>
+                </li>
+                <li>
+                    <img src="./assets/icons8-github.svg" title="my github" alt="github">
+                    <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer">Github</a>
+                </li>
+            </ul>
+        </nav>
+    </top>
     <main>
-        <div class="center">
-            <h1 class="title">Giorgi Rakviashvili _</h1>
-            <p class="description">gr@giorgir.live</p>
-        </div>
-        <div class="shortcuts">
-            <a href="./rakviashvili_giorgi.pdf" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/resume.svg" title="my resume" alt="resume" class="icon resume-icon">
-            </a>
-            <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer">
-                <img src="./assets/github-1.svg" title="my github" alt="github" class="icon github-icon">
-            </a>
-            <a href="./projects.html">
-                <img src="./assets/project-icon-29173.png" title="my projects" alt="projects" class="icon projects-icon">
-            </a>
-        </div>
+        <section class="eng">
+            <h3 class="section-title">Engineering Projects</h3>
+            <div class="project">
+                <a href="#" title="view more" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/dji.jpg" alt="image">
+                </a>
+                <h2 class="title"><a href="#">Drone Flight Controller</a></h2>
+                <nav>
+                    <ul>
+                        <li>stm32f103</li>
+                        <li>Gyro/Accelerometer</li>
+                        <li>Esp-01</li>
+                        <li>4 brushed motors with a frame</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="project">
+                <a href="#" title="view more" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/proj_1.jpg" alt="image">
+                </a>
+                <h2 class="title"><a href="#">Inertial Navigation System</a></h2>
+                <nav>
+                    <ul>
+                        <li>stm32f103</li>
+                        <li>Gyro/Accelerometer</li>
+                        <li>Esp-01</li>
+                        <li>Simple Car Platform</li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <br />
+
+        <section class="web">
+            <h3 class="section-title">Web Development_</h3>
+            <div class="project">
+                <a href="https://giorgir2.github.io/discord-clone/" title="go to live website" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/main.png" alt="image">
+                </a>
+                <div class="top">
+                    <a href="https://github.com/GiorgiR2/discord-clone" title="github" target="_blank" rel="noopener noreferrer">Discord Clone Project</a>
+                    <div class="side">
+                        <div class="star">
+                            <span class="s">★</span>
+                            <span>8</span>
+                        </div>
+                        <div class="branches">
+                            <img src="./assets/branches.png" alt="branches" id="branches">
+                            <span>2</span>
+                        </div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li>Typescript</li>
+                        <li>Node</li>
+                        <li>WebRTC</li>
+                        <li>React</li>
+                        <li>Redux</li>
+                        <li>socket.io</li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <h2>@ 2024 Default copyright text</h2>
+    </footer>
 </body>
 
 </html>

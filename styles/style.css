@@ -4,40 +4,131 @@
   margin: 0;
 }
 
-body,
-html {
+body, html {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   height: 100vh;
   width: 100vw;
+  background-color: #fff;
 }
 
-main .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+top {
+  max-width: 900px;
+}
+top .title {
+  margin: 10px auto 10px auto;
+  width: 100%;
+  max-width: 900px;
+}
+top nav {
+  background-color: #2c3e50;
+  width: 60%;
+  max-width: 900px;
+  padding: 10px;
+  margin: auto;
+}
+top nav ul {
+  display: flex;
+}
+top nav ul li {
+  display: flex;
+}
+top nav ul li img {
+  height: 20px;
+  margin-right: 15px;
+}
+top nav ul li a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+top nav ul li a:hover, top nav ul li a:active {
+  text-decoration: underline;
+}
+
+main {
+  margin: 20px auto 20px auto;
+  border-style: groove;
+  border-color: #ecf0f1;
+  border-radius: 5px;
+  border-width: 2px;
+  max-width: 900px;
+  padding: 15px;
+}
+main .project {
+  background-color: #ecf0f1;
+  width: 860px;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+main .project img {
+  max-height: 450px;
+  max-width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  cursor: pointer;
+}
+main .project img:hover, main .project img:active {
+  transform: scale(1.12, 1.12);
+  transition-duration: 0.4s;
+}
+main .project .top {
+  display: flex;
+  justify-content: space-between;
+}
+main .project .top a {
+  margin: 15px 0 15px 15px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+}
+main .project .top .side {
+  display: flex;
+}
+main .project .top .side .star, main .project .top .side .branches {
+  margin: 8px 10px 15px 0px;
+}
+main .project .top .side .star .s, main .project .top .side .branches .s {
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+main .project .top .side .star span, main .project .top .side .branches span {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+main .project .top .side .branches #branches {
+  height: 16px;
+}
+main .project nav ul {
+  display: flex;
+}
+main .project nav ul li {
+  list-style: none;
+  background-color: #52a7e0;
+  color: #fff;
+  border-radius: 8px;
   width: -moz-fit-content;
   width: fit-content;
-  align-content: center;
+  padding: 5px 10px 5px 10px;
+  margin-left: 10px;
+  font-weight: 400;
 }
-main .center p {
+main .eng .title {
+  font-size: 1.2em;
+  margin: 10px 0px 10px 10px;
   width: 100%;
-  text-align: center;
-  margin-top: 37px;
+  text-align: left;
 }
-main .shortcuts {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(calc(-100% - 10px), -50%);
+main .eng .title a {
+  text-decoration: none;
+  color: #000;
 }
-main .shortcuts .icon {
-  height: 55px;
-  width: 55px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: transform 0.15s;
+
+footer {
+  margin: 0 auto 10px auto;
+  width: 900px;
 }
-main .shortcuts .icon:hover, main .shortcuts .icon:active {
-  transform: translate(-14px, 0);
+footer h2 {
+  font-size: 0.8em;
 }/*# sourceMappingURL=style.css.map */

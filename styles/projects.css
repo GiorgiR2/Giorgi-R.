@@ -46,7 +46,7 @@ main {
   width: fit-content;
   margin: auto;
 }
-main h3 {
+main .section-title {
   padding-top: 20px;
 }
 main .project {
@@ -55,15 +55,14 @@ main .project {
   border-radius: 10px;
   padding-bottom: 10px;
   margin-top: 20px;
+  text-align: center;
 }
 main .project img {
-  height: auto;
+  max-height: 400px;
   max-width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   cursor: pointer;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 main .project img:hover, main .project img:active {
   transform: scale(1.12, 1.12);
@@ -109,6 +108,16 @@ main .project nav ul li {
   padding: 5px 10px 5px 10px;
   margin-left: 10px;
   font-weight: 400;
+}
+main .eng .title {
+  font-size: 1.2em;
+  margin: 10px 0px 10px 10px;
+  width: 100%;
+  text-align: left;
+}
+main .eng .title a {
+  text-decoration: none;
+  color: #000;
 }
 
 footer {
