@@ -54,6 +54,15 @@ main {
   max-width: 900px;
   padding: 15px;
 }
+
+footer {
+  margin: 0 auto 10px auto;
+  width: 900px;
+}
+footer h2 {
+  font-size: 0.8em;
+}
+
 main .project {
   background-color: #ecf0f1;
   width: 860px;
@@ -123,12 +132,4 @@ main .eng .title {
 main .eng .title a {
   text-decoration: none;
   color: #000;
-}
-
-footer {
-  margin: 0 auto 10px auto;
-  width: 900px;
-}
-footer h2 {
-  font-size: 0.8em;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=main.css.map */
