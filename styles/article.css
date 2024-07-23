@@ -83,8 +83,18 @@ main nav ul {
   list-style-type: decimal;
   list-style-position: inside;
 }
-main img {
+main .article img {
   max-width: 98%;
+}
+main .article .solidworks img {
+  max-width: 400px;
+  display: inline;
+}
+main .article .medium {
+  max-width: 520px;
+  margin-left: calc(50% - 280px);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 main .gallery {
   max-width: 200px;
