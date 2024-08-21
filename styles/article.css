@@ -90,12 +90,6 @@ main .article .solidworks img {
   max-width: 400px;
   display: inline;
 }
-main .article .medium {
-  max-width: 520px;
-  margin-left: calc(50% - 280px);
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 main .gallery {
   max-width: 200px;
   display: inline;
