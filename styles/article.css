@@ -90,6 +90,9 @@ main .article .solidworks img {
   max-width: 400px;
   display: inline;
 }
+main .link {
+  text-decoration: none;
+}
 main .gallery {
   max-width: 200px;
   display: inline;
