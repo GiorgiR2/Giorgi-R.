@@ -7,31 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/article.css">
 
-    <title>Project</title>
+    <title>Drone Flight Controller &ndash; Giorgi Rakviashvili</title>
 </head>
 
 <body>
-    <top>
+    <header>
         <h1 class="title">Giorgi Rakviashvili</h1>
         <nav>
             <ul>
                 <li>
-                    <img src="../../assets/cabin_white_24dp.svg" title="home" alt="home">
-                    <a href="../../index.html">Home</a>
-                <li>
-                    <img src="../../assets/description_white_24dp.svg" title="my resume" alt="resume">
-                    <a href="../../me.html">Resume (me)</a>
+                    <a href="../../index.html"><img src="../../assets/cabin_white_24dp.svg" alt="">Home</a>
                 </li>
                 <li>
-                    <img src="../../assets/icons8-github.svg" title="my github" alt="github">
-                    <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a href="../../me.html"><img src="../../assets/description_white_24dp.svg" alt="">Resume (me)</a>
+                </li>
+                <li>
+                    <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer"><img src="../../assets/icons8-github.svg" alt="">Github</a>
                 </li>
             </ul>
         </nav>
-    </top>
+    </header>
 
     <main>
+        <p class="date">2024</p>
         <h2 class="article-title">დრონის მართვის სქემა</h2>
+        <ul class="tags">
+            <li>STM32F401RC</li>
+            <li>GY-521 Gyro/Accelerometer</li>
+            <li>HC-01</li>
+            <li>4 Brushless Motors</li>
+            <li>ESC drivers</li>
+        </ul>
         <div class="article">
             <img src="./picture_0.jpg" alt="quadcopter"/>
 
@@ -88,7 +94,7 @@
             </p>
             
             <h4>მიკროკონტროლერის ალგორითმის აღწერა <a href="https://github.com/GiorgiR2/drone-flight-controller" class="link">(Github Link)</a></h4>
-            <div>
+            <div class="code">
             <b>int main(void);</b><br>
             ვახდენ პერიფერიების ინიციალიზებას. While loop-ში ვამუშავებ გიროსკოპის და აქსელერომეტრის მონაცემებს. <br>
             <br>
@@ -117,22 +123,20 @@
             <b>void motor3_minus(uint16_t pwm);</b><br>
             </div>
             <h4>გამოყენებული დეტალების  ჩამონათვალი</h4>
-            <nav>
-                <ul>
-                    <li>მიკროკონტროლერი stm32f401RC – 1 ცალი</li>
-                    <li>გიროსკოპისა და აქსელერომეტრების მოდული GY-521 MPU6050</li>
-                    <li>ძაბვის რეგულატორი LM1117 – 1 ცალი</li>
-                    <li>ძაბვის რეგულატორი LM7805 – 1 ცალი</li>
-                    <li>Sot-23 ტრანზისტორები - 4 ცალი</li>
-                    <li>0805 რეზისტორები</li>
-                    <li>0805 ტევადობები</li>
-                    <li>BLDC ძრავი - 4 ცალი</li>
-                    <li>ESC ძრავის დრაივერები - 4 ცალი</li>
-                    <li>ელექტროლიტური ტევადობა 1000uF</li>
-                    <li>ბატარეა 14.7v 7200mah – 1 ცალი</li>
-                    <li>ბლუთუზ მოდული HC-05 / wifi მოდული ESP-01</li>
-                </ul>
-            </nav>
+            <ol>
+                <li>მიკროკონტროლერი stm32f401RC – 1 ცალი</li>
+                <li>გიროსკოპისა და აქსელერომეტრების მოდული GY-521 MPU6050</li>
+                <li>ძაბვის რეგულატორი LM1117 – 1 ცალი</li>
+                <li>ძაბვის რეგულატორი LM7805 – 1 ცალი</li>
+                <li>Sot-23 ტრანზისტორები - 4 ცალი</li>
+                <li>0805 რეზისტორები</li>
+                <li>0805 ტევადობები</li>
+                <li>BLDC ძრავი - 4 ცალი</li>
+                <li>ESC ძრავის დრაივერები - 4 ცალი</li>
+                <li>ელექტროლიტური ტევადობა 1000uF</li>
+                <li>ბატარეა 14.7v 7200mah – 1 ცალი</li>
+                <li>ბლუთუზ მოდული HC-05 / wifi მოდული ESP-01</li>
+            </ol>
         </div>
 
         <div class="gallery">
@@ -147,7 +151,7 @@
     </main>
 
     <footer>
-        <h2>@ 2024 Default copyright text</h2>
+        <p>&copy; 2024 Giorgi Rakviashvili</p>
     </footer>
 </body>
 </html>

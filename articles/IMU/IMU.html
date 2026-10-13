@@ -7,31 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/article.css">
 
-    <title>Project</title>
+    <title>Inertial Navigation System &ndash; Giorgi Rakviashvili</title>
 </head>
 
 <body>
-    <top>
+    <header>
         <h1 class="title">Giorgi Rakviashvili</h1>
         <nav>
             <ul>
                 <li>
-                    <img src="../../assets/cabin_white_24dp.svg" title="home" alt="home">
-                    <a href="../../index.html">Home</a>
-                <li>
-                    <img src="../../assets/description_white_24dp.svg" title="my resume" alt="resume">
-                    <a href="../../me.html">Resume (me)</a>
+                    <a href="../../index.html"><img src="../../assets/cabin_white_24dp.svg" alt="">Home</a>
                 </li>
                 <li>
-                    <img src="../../assets/icons8-github.svg" title="my github" alt="github">
-                    <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a href="../../me.html"><img src="../../assets/description_white_24dp.svg" alt="">Resume (me)</a>
+                </li>
+                <li>
+                    <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer"><img src="../../assets/icons8-github.svg" alt="">Github</a>
                 </li>
             </ul>
         </nav>
-    </top>
+    </header>
 
     <main>
+        <p class="date">2023</p>
         <h2 class="article-title">Inertial Navigation System</h2>
+        <ul class="tags">
+            <li>stm32f103</li>
+            <li>Gyro/Accelerometer</li>
+            <li>Esp-01</li>
+            <li>Simple Car Platform</li>
+        </ul>
         <div class="article">
             <img src="./picture_2.jpg" alt="imu"/>
 
@@ -65,18 +70,16 @@
             <img src="./circuit_diagram.png" alt="circuit diagram"/>
 
             <h4>გამოყენებული დეტალების  ჩამონათვალი</h4>
-            <nav>
-                <ul>
-                    <li>მიკროკონტროლერი stm32f103C8 – 1 ცალი</li>
-                    <li>ძრავის დრაივერი L298N – 1 ცალი</li>
-                    <li>გიროსკოპისა და აქსელერომეტრების მოდულები gy-521 (MPU6050) – 3 ცალი</li>
-                    <li>ძაბვის რეგულატორი LM7805 – 1 ცალი</li>
-                    <li>ძრავი 6ვ - 2 ცალი</li>
-                    <li>კერამიკული ტევადობა 100nF - 3 ცალი</li>
-                    <li>ელექტროლიტური ტევადობა 1000uF - 2 ცალი</li>
-                    <li>ბატარეები 3.7v – 2 ცალი</li>
-                </ul>
-            </nav>
+            <ol>
+                <li>მიკროკონტროლერი stm32f103C8 – 1 ცალი</li>
+                <li>ძრავის დრაივერი L298N – 1 ცალი</li>
+                <li>გიროსკოპისა და აქსელერომეტრების მოდულები gy-521 (MPU6050) – 3 ცალი</li>
+                <li>ძაბვის რეგულატორი LM7805 – 1 ცალი</li>
+                <li>ძრავი 6ვ - 2 ცალი</li>
+                <li>კერამიკული ტევადობა 100nF - 3 ცალი</li>
+                <li>ელექტროლიტური ტევადობა 1000uF - 2 ცალი</li>
+                <li>ბატარეები 3.7v – 2 ცალი</li>
+            </ol>
         </div>
 
         <div class="gallery">
@@ -93,7 +96,7 @@
     </main>
 
     <footer>
-        <h2>@ 2024 Default copyright text</h2>
+        <p>&copy; 2024 Giorgi Rakviashvili</p>
     </footer>
 </body>
 </html>

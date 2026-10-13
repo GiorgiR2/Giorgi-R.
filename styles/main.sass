@@ -1,77 +1,111 @@
-@import "./base"
+@use "base"
 
-main
-    .project
-        background-color: #ecf0f1
-        // width: 860px
-        border-radius: 10px
-        padding-bottom: 10px
-        margin-top: 20px
-        // align-content: center
-        text-align: center
+// Home page: each section is a responsive grid of project cards.
+main section
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr))
+    gap: 1.25rem
 
-        a
-            img
-                // max-height: 450px
-                // max-width: 100%
-                width: 80%
-                // margin: 10px
-                border-top-left-radius: 10px
-                border-top-right-radius: 10px
-                cursor: pointer
+    & + section
+        margin-top: 3.5rem
 
-                &:hover,
-                &:active
-                    transform: scale(1.12, 1.12)
-                    transition-duration: 0.4s
-        
-        .top
-            display: flex
-            justify-content: space-between
+.section-title
+    grid-column: 1 / -1
+    font-family: var(--font-mono)
+    font-size: 0.78rem
+    font-weight: 500
+    letter-spacing: 0.08em
+    text-transform: uppercase
+    color: var(--muted)
 
-            a
-                margin: 15px 0 15px 15px
-                text-decoration: none
-                color: #000
-                font-weight: 700
-            
-            .side
-                display: flex
+.project
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    background-color: var(--bg)
+    border: 1px solid var(--border)
+    border-radius: var(--radius)
+    transition: border-color 0.2s ease, box-shadow 0.2s ease
 
-                .star, .branches
-                    margin: 8px 10px 15px 0px
-                    .s
-                        font-weight: 900
-                        font-size: 1.3rem
+    &:hover
+        border-color: var(--border-strong)
+        box-shadow: var(--shadow)
 
-                    span
-                        font-weight: 400
-                        font-size: 1.2rem
-                
-                .branches
-                    #branches
-                        height: 16px
-        
-        nav
-            ul
-                display: flex
-                li
-                    list-style: none
-                    background-color:#52a7e0
-                    color: #fff
-                    border-radius: 8px
-                    width: fit-content
-                    padding: 5px 10px 5px 10px
-                    margin-left: 10px
-                    font-weight: 400
-    
-    .eng
-        .title
-            font-size: 1.2em
-            margin: 10px 0px 10px 10px
+    // cover image, zooms slightly inside the card on hover
+    > a
+        display: block
+        overflow: hidden
+        background-color: var(--surface)
+        border-bottom: 1px solid var(--border)
+
+        img
             width: 100%
-            text-align: left
+            transition: transform 0.4s ease
 
-            a
-                text-decoration: none
-                color: #000
+    &:hover > a img
+        transform: scale(1.03)
+
+    // short text under the project name
+    .description
+        padding: 0 1.125rem 0.75rem
+        font-size: 0.95rem
+        color: var(--muted)
+
+        &:last-child
+            padding-bottom: 1.125rem
+
+    // year the project was made, shown above its name
+    .date
+        padding: 1rem 1.125rem 0
+        font-family: var(--font-mono)
+        font-size: 0.72rem
+        letter-spacing: 0.04em
+        color: var(--muted)
+
+        + .title, + .top
+            padding-top: 0.2rem
+
+    // project name: engineering cards use .title, web cards use .top
+    .title, .top
+        padding: 1rem 1.125rem 0.625rem
+
+    .title, .top > a
+        font-size: 1.05rem
+        font-weight: 600
+        line-height: 1.35
+
+    .title a, .top > a
+        color: var(--text)
+        text-decoration: none
+
+        &:hover
+            color: var(--accent)
+
+    .top
+        display: flex
+        align-items: baseline
+        justify-content: space-between
+        gap: 1rem
+
+    .side
+        display: flex
+        gap: 0.875rem
+        font-size: 0.85rem
+        color: var(--muted)
+        font-variant-numeric: tabular-nums
+
+        .star, .branches
+            display: flex
+            align-items: center
+            gap: 0.3rem
+
+        #branches
+            width: auto
+            height: 13px
+            opacity: 0.6
+            filter: var(--glyph-filter)
+
+    // technology tags
+    ul
+        @include base.tags
+        padding: 0 1.125rem 1.125rem

@@ -1,73 +1,159 @@
-*
+// Design tokens. Light theme by default, dark theme follows the OS setting.
+:root
+    --bg: #ffffff
+    --surface: #f5f7fa
+    --text: #1c2229
+    --muted: #5d6875
+    --border: #e4e8ed
+    --border-strong: #cdd5de
+    --accent: #2767ad
+    --accent-soft: #eaf2fb
+    --accent-text: #1f5a94
+    --shadow: 0 12px 32px -20px rgba(28, 34, 41, 0.45)
+    // nav icons are white SVGs, the branches glyph is a black PNG
+    --icon-filter: invert(1)
+    --glyph-filter: none
+
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Noto Sans Georgian", sans-serif
+    --font-mono: ui-monospace, SFMono-Regular, "Cascadia Code", Menlo, Consolas, monospace
+    --maxw: 860px
+    --radius: 12px
+
+    color-scheme: light dark
+
+@media (prefers-color-scheme: dark)
+    :root
+        --bg: #0f1318
+        --surface: #161b22
+        --text: #e5e9ee
+        --muted: #98a3b0
+        --border: #252c35
+        --border-strong: #3a4450
+        --accent: #6fb1ea
+        --accent-soft: rgba(111, 177, 234, 0.12)
+        --accent-text: #9cc9f1
+        --shadow: 0 12px 32px -20px rgba(0, 0, 0, 0.9)
+        --icon-filter: none
+        --glyph-filter: invert(1)
+
+*, *::before, *::after
     box-sizing: border-box
     padding: 0
     margin: 0
 
-body, html
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
-    height: 100vh
-    width: 100vw
-    background-color: #fff
+html
+    -webkit-text-size-adjust: 100%
+    text-size-adjust: 100%
 
-top
-    // max-width: 900px
+body
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+    font-family: var(--font-sans)
+    font-size: 1rem
+    line-height: 1.6
+    color: var(--text)
+    background-color: var(--bg)
+    -webkit-font-smoothing: antialiased
+
+img
+    display: block
+    max-width: 100%
+    height: auto
+
+a
+    color: var(--accent)
+    text-underline-offset: 0.2em
+    text-decoration-thickness: 1px
+
+:focus-visible
+    outline: 2px solid var(--accent)
+    outline-offset: 3px
+    border-radius: 4px
+
+::selection
+    background-color: var(--accent-soft)
+
+// Keyword pills, used on home page cards and project pages.
+@mixin tags
+    display: flex
+    flex-wrap: wrap
+    gap: 0.375rem
+    list-style: none
+
+    li
+        padding: 0.2rem 0.6rem
+        font-family: var(--font-mono)
+        font-size: 0.72rem
+        line-height: 1.5
+        color: var(--accent-text)
+        background-color: var(--accent-soft)
+        border-radius: 999px
+
+// Header, content and footer share one centered column.
+header, main, footer
+    width: min(100% - 2.5rem, var(--maxw))
+    margin-inline: auto
+
+header
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+    gap: 0.75rem 2rem
+    padding: 2.25rem 0 1.25rem
+    border-bottom: 1px solid var(--border)
+
     .title
-        margin: 10px auto 10px auto
-        width: 69%
-        // width: 900px
-        max-width: 900px
+        font-size: 1.5rem
+        font-weight: 700
+        line-height: 1.2
+        letter-spacing: -0.015em
 
-    nav
-        background-color: #2c3e50
-        width: 69%
-        max-width: 900px
-        // width: 900px
-        padding: 10px
-        margin: auto
+    nav ul
+        display: flex
+        flex-wrap: wrap
+        gap: 0.25rem 1.5rem
+        list-style: none
 
-        ul
-            display: flex
+    a
+        display: flex
+        align-items: center
+        gap: 0.45rem
+        font-size: 0.95rem
+        color: var(--muted)
+        text-decoration: none
+        text-underline-offset: 0.45em
+        text-decoration-thickness: 2px
+        transition: color 0.15s ease
 
-            li
-                display: flex
+        img
+            width: 18px
+            height: 18px
+            filter: var(--icon-filter)
+            opacity: 0.55
+            transition: opacity 0.15s ease
 
-                img
-                    height: 20px
-                    margin-right: 15px
-                    object-fit: cover
-                
-                a
-                    margin-right: 20px
-                    text-decoration: none
-                    color: #fff
+        &:hover, &[aria-current="page"]
+            color: var(--text)
 
-                    &:hover, &:active
-                        text-decoration: underline
+            img
+                opacity: 0.9
+
+        &[aria-current="page"]
+            text-decoration: underline
+            text-decoration-color: var(--accent)
 
 main
-    margin: 20px auto 20px auto
-    border-style: groove
-    border-color: #ecf0f1
-    border-radius: 5px
-    border-width: 2px
-    padding: 15px
-
-    max-width: 900px
-    width: 69%
+    flex: 1
+    padding: 2.5rem 0 4rem
 
 footer
-    margin: 0 auto 10px auto
+    padding: 1.5rem 0 2.5rem
+    font-size: 0.85rem
+    color: var(--muted)
+    border-top: 1px solid var(--border)
 
-    max-width: 900px
-    width: 69% //900px
-
-    h2
-        font-size: 0.8em
-
-@media screen and (max-width: 1000px)
-    top
-        .title, nav
-            width: 95%
-    
-    main, footer
-        width: 95%
+@media (prefers-reduced-motion: reduce)
+    *, *::before, *::after
+        transition: none !important

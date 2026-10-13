@@ -5,57 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/article.css">
-    <title>Me</title>
+    <title>Resume &ndash; Giorgi Rakviashvili</title>
 </head>
 <body>
-    <top>
+    <header>
         <h1 class="title">Giorgi Rakviashvili</h1>
         <nav>
             <ul>
                 <li>
-                    <img src="./assets/cabin_white_24dp.svg" title="home" alt="home">
-                    <a href="./index.html">Home</a>
-                <li>
-                    <img src="./assets/description_white_24dp.svg" title="my resume" alt="resume">
-                    <a href="./me.html">Resume (me)</a>
+                    <a href="./index.html"><img src="./assets/cabin_white_24dp.svg" alt="">Home</a>
                 </li>
                 <li>
-                    <img src="./assets/icons8-github.svg" title="my github" alt="github">
-                    <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer">Github</a>
+                    <a href="./me.html" aria-current="page"><img src="./assets/description_white_24dp.svg" alt="">Resume (me)</a>
+                </li>
+                <li>
+                    <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer"><img src="./assets/icons8-github.svg" alt="">Github</a>
                 </li>
             </ul>
         </nav>
-    </top>
+    </header>
 
     <main>
         <h2 class="title">About Me</h2>
         <p class="text">
-            My name is <b>Giorgi Rakviashvili</b>, I'm an Electrical Engineering Student. My main interests include Microcontrollers, FPGAs, Analog and Digital Circuits.<br>
-            <br>
-            Projects I have worked on is in <a href="./index.html"><b>Home</b></a> category, you can also visit my Github page. <br>
-            <br>
+            Hi, I'm Giorgi. I'm a hardware engineer. Most of my work is designing PCBs and writing firmware for STM32 microcontrollers. I've also worked on FPGAs, writing the designs in Verilog.
+        </p>
+        <p class="text">
+            A big part of that has been <b>IoT</b> boards for HVAC systems in buildings. The boards connect HVAC units to the BMS platform, so people can monitor and control them from a website. They can check temperatures, change modes, turn units on and off, that kind of thing.
+        </p>
+        <p class="text">
+            Some of my personal projects are on the <a href="./index.html">Home</a> page, and there's more on my <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
 
         <h2 class="skills">Skills</h2>
-        <h4 class="no-style">Software/Tools I use</h4>
-        <nav>
-            <ul>
-                <li><b>Proteus</b> - Simulation, PCB design</li>
-                <li><b>Microchip Studio</b> - Programming Atmega MCUs</li>
-                <li><b>Stm32CubeIDE</b> - STM32 Programming</li>
-                <li><b>Ise Design Suite</b> / ModelSim - Spartan-6 FPGAs</li>
-                <li><b>Solidworks</b> - Basic Modeling for 3D Printing</li>
-                <li><b>MMANA-GAL</b> - Antenna Modeling</li>
-            </ul>
-        </nav>
+        <h4 class="no-style">Software/Tools/Languages I use</h4>
+        <ul>
+            <li><b>STM32</b> Microcontrollers</li>
+            <li><b>KiCad</b> PCB Design</li>
+            <li><b>Verilog, Quartus, Cyclone 10</b> FPGAs</li>
+            <li><b>C, Python</b></li>
+        </ul>
 
-        <br>
         <h2 class="contact">Contact Me</h2>
-        <span>rakviashvili.giorgi@gmail.com</span>
+        <a href="mailto:rakviashvili.giorgi@gmail.com">rakviashvili.giorgi@gmail.com</a>
     </main>
 
     <footer>
-        <h2>@ 2024 Default copyright text</h2>
+        <p>&copy; 2024 Giorgi Rakviashvili</p>
     </footer>
 </body>
 </html>

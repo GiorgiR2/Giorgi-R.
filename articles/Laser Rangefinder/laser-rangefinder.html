@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/article.css">
+
+    <title>Laser Rangefinder &ndash; Giorgi Rakviashvili</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Giorgi Rakviashvili</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../../index.html"><img src="../../assets/cabin_white_24dp.svg" alt="">Home</a>
+                </li>
+                <li>
+                    <a href="../../me.html"><img src="../../assets/description_white_24dp.svg" alt="">Resume (me)</a>
+                </li>
+                <li>
+                    <a href="https://github.com/GiorgiR2" target="_blank" rel="noopener noreferrer"><img src="../../assets/icons8-github.svg" alt="">Github</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p class="date">2025 &ndash; 2026</p>
+        <h2 class="article-title">Laser Rangefinder</h2>
+        <ul class="tags">
+            <li>FPGA</li>
+            <li>Cyclone 10</li>
+            <li>Fast ADC</li>
+            <li>High Speed Data Transmission</li>
+        </ul>
+        <div class="article">
+            <img src="./photo_2026-09-28_23-00-36.jpg" alt="Assembled laser rangefinder board with an Intel Cyclone 10 FPGA"/>
+
+            <p>პროექტის მიზანია ლაზერული მანძილმზომის შექმნა - მინიმალური ანალოგური ნაწილების გამოყენებით, ფაზის შედარება ციფრულად.</p>
+            <p>კომპონენტები <b>High-Speed ADC, FPGA, FT601</b> გამოყენებულია მხოლოდ ინტერესისთვის და გართობისთვის, კომერციული მიზნებისთვის მსგავს დივაისებს ამზადებენ მხოლოდ იაფი, მარტივი ნაწილებით.</p>
+
+            <h4>როგორ მუშაობს ფაზური მანძილმზომი</h4>
+            <p>ლაზერის სხივის სიკაშკაშე მოდულირებულია პერიოდული სიგნალით, ამ პროექტში <b>6.5 MHz</b> სიხშირით. სხივი აირეკლება ობიექტიდან და ბრუნდება ფოტოდიოდამდე. რაც უფრო შორსაა ობიექტი, მით მეტ დროს ანდომებს სინათლე გზას, ამიტომ მიღებული სიგნალი გამოსხივებულს ფაზით ჩამორჩება.</p>
+            <p>მანძილი გამოითვლება ფაზური სხვაობიდან (Δφ):<br>
+                <b>d = c · Δφ / (4π · f)</b><br>
+                სადაც c სინათლის სიჩქარეა, f კი მოდულაციის სიხშირე. ფორმულაში 4π წერია და არა 2π, რადგან სინათლე ამ მანძილს ორჯერ გადის: იქით და უკან.</p>
+            <p>ფაზა მეორდება ყოველ 360°-ში, ამიტომ ერთი სიხშირით ცალსახად იზომება მხოლოდ c / (2f) მანძილი. 6.5 MHz-ზე ეს დაახლოებით 23 მეტრია, და ფაზის 1° ცვლილება დაახლოებით 6.4 სმ-ს შეესაბამება. ამიტომ სიზუსტე დამოკიდებულია იმაზე, რამდენად ზუსტად ვზომავთ ფაზას. უფრო დიდი მანძილის გასაზომად რამდენიმე სხვადასხვა მოდულაციის სიხშირეს იყენებენ.</p>
+
+            <h4>part 1</h4>
+            <p>არეკლილი სიგნალის სისუსტიდად გამომდინარე აუცილებელია მიმღებში შემკრები ლინზის გამოყენება, APD დიოდის. ასევე, გვჭირდება გაძლიერების რამდენიმე საფეხური და ფილტრაცია. </p>
+
+            <p>საბოლოოდ მიღებული სიგნალის გაციფრულება ხდება (12 bit რეზოლუცია და 26 MHZ სიხშირით). იმისთის რომ ფაზის შედარება შესაძლებელი იყოს ვაციფრულებ 26 MHZ სიხშირით (6.5 Mhz*4).</p>
+
+            <p>FPGA-ის დანიშნულება არის გაციფრულებული მონაცემების მიღება, ფაზის გამოთვლა და შედეგის მაღალი სისწრაფის FTDI ჩიპით გადაცემა კომპიუტერისთვის. შემდეგ საფეხურზე python ის სკრიპტით ხდება მონაცემების მიღება, ვიზუალიზაცია და Low-Pass Filtering მაღალი სიზუსტისთვის.</p>
+
+            <h4>Block Diagram</h4>
+            <img src="./Diagram.png" alt="Block diagram. The FPGA drives the laser with a 6.5 MHz signal through a band-pass filter and laser driver. The photodiode signal goes through a TIA, AGC, band-pass filter and ADC back to the FPGA, which sends phase data to a PC over USB 3.0 through an FTDI chip."/>
+
+            <h4>ModelSim FPGA Diagram</h4>
+            <img src="./ModelSim_Block_Editor.png" alt=""/>
+
+            <h4>სხვა დანიშნულება / მომავალი მიზნები</h4>
+            <p>ამ დივაისის გამოყენება შესაძლებელია ნებისმიერი ტიპის სიგნალის გაციფრულებისთვის <b>(max 12 bit, 65 Mhz)</b>. პლატაზე ჯდება IPEX ის კონექტორი, რომელშიც ჩვენთვის სასურველ სიგნალ შევუშვებთ. </p>
+            <p>მაგალითისთვის თუ ავაწყობთ <b>Radio Front-End</b> ს და ჩვენს მოწყობილობას კაბელით დავუკავშირებთ მივიღებთ <b>USB SDR Dongle</b>-ს.</p>
+        </div>
+
+        <div class="gallery">
+            <h4>Gallery</h4>
+            <img src="./photo_2026-09-28_23-00-36.jpg" alt="Assembled board, top view" class="gallery">
+            <img src="./photo_2026-09-28_23-00-35.jpg" alt="Assembled board from an angle, showing the laser optics" class="gallery">
+            <img src="./photo_2026-09-28_23-00-35%20(2).jpg" alt="Side view of the board and the laser optics" class="gallery">
+            <img src="./photo_2026-09-28_23-00-361.jpg" alt="Bare PCB before assembly" class="gallery">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Giorgi Rakviashvili</p>
+    </footer>
+</body>
+</html>
